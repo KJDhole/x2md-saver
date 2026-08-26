@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<style>
+  body { width: 320px; margin: 0; padding: 16px; background: #15202b; color: #e7e9ea;
+         font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 13px; }
+  h1 { font-size: 15px; margin: 0 0 12px; }
+  label { display: block; margin: 10px 0 4px; color: #8b98a5; }
+  input { width: 100%; box-sizing: border-box; padding: 8px; border: 1px solid #38444d;
+          border-radius: 6px; background: #192734; color: #e7e9ea; font-size: 13px; }
+  button { margin-top: 14px; width: 100%; padding: 9px; border: 0; border-radius: 999px;
+           background: #1d9bf0; color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; }
+  button:hover { background: #1a8cd8; }
+  .tip { margin-top: 12px; color: #8b98a5; line-height: 1.6; }
+  a { color: #1d9bf0; }
+  #status { margin-top: 10px; font-weight: 600; min-height: 18px; }
+  .ok { color: #00ba7c; } .err { color: #f4212e; }
+  .row { display: flex; gap: 8px; } .row > div { flex: 1; }
+</style>
+</head>
+<body>
+  <h1>X2MD 知识库设置</h1>
+  <label>服务器地址</label>
+  <input id="serverUrl" placeholder="http://IP:8765 或 https://kb.example.com">
+  <label>访问 Token（与服务器 QUEUE_TOKEN 一致）</label>
+  <input id="token" type="password" placeholder="token">
+  <button id="save">保存</button>
+  <div id="status"></div>
+  <div class="tip">
+    保存后，在 X 任意推文的「…」菜单里点「保存到知识库」即可。<br>
+    服务器状态：<a id="check" href="#">测试连接</a>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
