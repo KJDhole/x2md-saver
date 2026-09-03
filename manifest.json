@@ -1,17 +1,28 @@
 {
   "manifest_version": 3,
   "name": "X2MD 知识库采集",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "在 X 的「…」菜单中添加「保存到知识库」，一键提交到你的服务器自动归档为 Markdown 知识库。",
-  "permissions": ["storage"],
-  "host_permissions": ["http://*/*", "https://*/*"],
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
   "background": {
     "service_worker": "src/background.js"
   },
   "content_scripts": [
     {
-      "matches": ["https://x.com/*", "https://twitter.com/*"],
-      "js": ["src/content.js"],
+      "matches": [
+        "https://x.com/*",
+        "https://twitter.com/*"
+      ],
+      "js": [
+        "src/url-selection.js",
+        "src/content.js"
+      ],
       "run_at": "document_idle"
     }
   ],
